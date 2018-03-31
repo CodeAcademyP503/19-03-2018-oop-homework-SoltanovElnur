@@ -1,0 +1,130 @@
+1. Continue ve break ifadeleri arasindaki ferq nedir?
+Bu ifadeler donguler icersinde istifade edilir ve switch casede istifade etdiyimiz bir ifadedir.
+Break ifadesi verilen deyere beraber oldugu halda dongunu sonlandirdigi halda, Continue ifadesi verilen deyere beraber oldugu
+halda o deyeri oxumur ama donguye davam edir, bu ifadeleri daha cox sonsuz dongulerde istifade etmek olar.
+Meselen Break ifadesini klaviaturadan girilen her hansi bir tusha beraber eleyib, istediyimiz vaxti dongunu dayandira bilerik.
+Hemcinin Continue ifadesinide istenilmeyen bir deyere beraber eleyib, deyerleri almadan donguye davam et emrini vermek olar.
+
+
+2.  string ve String keywordleri arasindaki benzer ve ferqli cehetleri yazin.
+Bu keywordlar arasinda hec bir ferq yoxdu, her ikiside eyni codu bize gosterecekdir.
+string ifadesi System.String clasini cagirmaq ucun istifade edilir.
+Sadece bunlarin hansini harda cagirmagimizin bize daha elverisli ve duzgun olacagini bilmek lazimdir.
+string idafesini obyekt yaratmaq ucun istifade etmek daha duzgun olar. Meselen: string obj = "Elnur";
+String ifadesinide bir class gostermek ucun istifade etmek olar.Meselen: string obj = String.Format("Elnur")
+Ferqlerine geldikde ise Visualda rengleri bashqadir,Sytem ad alanin bildirmeden String clasini istifade elemek olaz
+ama sringde olur.
+
+3.  Equals(),GetHashCode(),GetType(),ToString() metodlari hansi klassin methodlaridir ve vezifeleri nedir?
+Yuxarda gosterilmish metodlar Sytem klasinin metodlaridir. Sytem bize yaratdigimiz obyektin deyerini,tipini,cod deyerine
+sahib olmagimiza komeklik gosterir.
+
+
+  Equlas metodu bool operatoru vezvesini gorur obyektleri bir birleri ile muqaise edir.
+Meselen: c=a+b   c.Equals(a+b) yeni c ni a+b ye == edir true veya false olaraq consola yazir
+
+  GetHashCode metodu obyektin hash codunu, GetType obyektin tipini, ToString obyektin adini bize cixarir.
+
+4.  Public ve Static keywordleri arasinda benzerlik ya da ferqlilik varmi? Varsa nelerdir?
+1. Static - Bezen bize bir klass icersinde bir metoda yada deyisgene ehtiyacimiz olur, bu zaman hemen metodu veya deyishgeni
+i cagirmaq ucun static metod olaraq gosteririk ve istediyimizi bir basha her hansi bir qutu yaratmadan deyishgeni getire bilerik.
+Meselen: Komputer k = new Komputer(); deyilde   Komputer.ram = 8; bu seilde yazilmalidir.
+         k.ram = 8;
+Statik metodlarda deyishgen istifade etmeden qabaq bir deyer yazilmasi lazimdir. Yazilmasa int-0, boll-false olaraq deyer alacaqdir.
+Bu metodlar ancaq oz classi terefinden yaradilan deshishgenleri cagir biler. Esasen bir classin ilk deyerlerini yazmaq ucun istifade edilir.
+Bu metodlara qisacasi class metodlarida deye bilerik.
+2.Public keywordlarinada Static in tam tersi gibi baxa bilerik.
+
+5.  Method overloading nedir? Harda istifade oluna biler? Istifadeye yararli oldugunu isbat edebileceyiniz kod numuneleri gosterin
+Overload metodu eyni adla bir metodu deyerin deyishmekle birden cox istifade etmek, metodu yuklemek kimi basha dushe bilerik.
+Meselen:   
+
+
+''' class OverMetot
+{
+        public void OverLoad()
+        {
+            Console.WriteLine("Bosh");
+        }
+
+        public void OverLoad(int a)
+        {
+            Console.WriteLine("Bir deyeri var: " + a);
+        }
+ 
+        public int OverLoad(int a, int b)
+        {
+            Console.WriteLine("Iki int deyeri var: " + a + " " + b);
+            return a + b;
+        }
+
+     
+        public double OverLoad(double a, double b)
+        {
+            Console.WriteLine("Iki double deyeri var: " + a + " " + b);
+            return a + b;
+        }
+}
+static void Main()
+        {
+            OverMetot om = new OverMetot();
+            int a;
+            double b;
+ 
+            om.OverLoad();
+            Console.WriteLine();
+ 
+            om.OverLoad(2);
+            Console.WriteLine();
+ 
+            a = om.OverLoad(3,5);
+            Console.WriteLine("Cem deyeri: " + a.ToString());
+            Console.WriteLine();
+ 
+            b = ov.OverLoad(1.3, m0.5);
+            Console.WriteLine("Cem deyeri: " + b.ToString());
+ 
+        }
+'''
+
+
+
+6. variable ve property arasindaki benzer ve ferqli ceheteri izah edin.
+  Variable bir class yada structun icinde yazilan her tipden bir deyishgendir. Variable birden cox metodun deyerlerindi ozunde saxliyir.
+ 
+  Property OOP variablelerinin encapsulate edilmish veziyyetidir. Variable ve metodlari birleshdirir. Bu klasi yaradan adam ucunse iki kod setrinden olusur.
+Get ve Set metodlarindan. Get propertyi icindeki deyer oxundugund cixarir. Set ise property i yeni bir deyer aldiginda ise salir. Eyer bir propertyin set metodu yoxdursan,
+onda sadece oxuna biler. Eksi oldugundada eyni, sadece yazila biler.
+
+  Oxshar cehetleri her ikisi birinci metodu sonra tipi daha sonrada adi seklinde classin icinde yazilir.
+  Ferqli cehetleri ise variablelerden ferqli olaraq propertyleri deyishgen olaraq siniflere ayira bilmerik.
+
+
+7.  Visual Studio IDE si yoxdursa PC-nizde alternativ olaraq ne istifade edebilersiniz? Niye biz C# kodlarini Visual Studioda yaziriq? Izah edin.
+    IDE yoxdursa alternativ olaraq tam deqiq ne istiade edeceyimizi bilmesemde, Visual studionun en azindan C# kodlarini yazmagimizda bize boyuk komeklik gosterdiyini,
+isimizi asanlashdirdigini, sintaktik komekliyi gosterdiyini deye bilerem. Buda ona getrib cixarirki eyer her hansi bir IDE yoxdursa bele sintaksi sef yazdigimizda bize
+yazmaq istediymiz metodun yada her hansi bir sintaksin systemin harasinda oldugunu ve hardan geldiyin gostererek ve duzelish ede bileceyini deyerek boyuk komeklik gosterir.
+Duzunu desem tam maraqlanmadigim ucun cox shey deye bilmirem, ama bu maraqlanmayacagim baxmayacagim anlaminada gelmir esla.
+
+
+8.   Bu tapsiriq gonderilene geder tetilde programlasdirma adina ne etdiyinizi yazin.
+Tetil menim ucun cox hard kecdi demek olarki. Tetil muddetinde komputermi satdigim ve komputersiz qaldigim ucun kod yazmaq praktikasi eleye bilmesemde, A3 model telefonum
+ve evin 2 GB liq wifisi vaki, bunlardan istifade ederek kecilen derslerin muxtelif video ve yazilardan tekrarlarini oxumusham ve baxmisham(kod yazilariyla birge).
+Yeni elimden gelenin en yaxshisini elemeye calishmisham. Menim ucun tetil cox hard rejimde kecib. Problemler , aile heyati ve derslerle meshgul olmaq menim yuxusuz gecelere
+ve yorgunluqla kecirmeyme sebeb olub. En azindan Programlashdirmaya dair bunovremin yaxshi olmagi ucun elimnen geleni edirem, buna misal olaraqda gelen ayi mezuniyyet olaraq goturmushem,
+halbuki sentiabr ayina planlashdirmishdim :)
+
+
+9.   OOP konseptlerinden olan inheritance konseptini yararli olabileceyini isbatlayacaq kod numunelerini yazin
+ Obejct Oriented Programming aciqlamasi ile OPP adindanda gorunduyu kimi obyekt yonlu programlama yaradilmish boyuk programlarin asan ve tez bir zamanda duzeltilmesi ucun istifade olunmaqdadir.
+Butun modern programlama dilleri terefindende desteklenir ve istfade edilir. Kod tekrarlarinin qarshisini alir, birden cox programistin eyni anda islemesine yardimci olur ve isi asanlashdirir.
+       static void Main(string[] args)
+        {
+            Mektebli mtb = new Mektebli();
+            mtb.Adi = "Elay";
+            mtb.Soyadi = "Soltanli";
+            mtb.Cinsiyyeti = 'Q';
+            mtb.Boyu = 1.10;
+            mtb.Yashi = 3;
+            Console.WriteLine("Adi: " + mtb.Adi + "\n" + "Soyadi: " + mtb.Soyadi + "\n" + "Cinsiyyeti: " + mtb.Cinsiyyeti);
+        }
